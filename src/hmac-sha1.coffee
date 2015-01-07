@@ -68,12 +68,12 @@ class HMAC_SHA1
       req = hapiRawReq
 
     originalUrl = req.originalUrl or req.url
-    protocol = req.protocol
-    
+    protocol = 'https' #req.protocol
+
     if protocol is undefined
-      encrypted = req.connection.encrypted
+      encrypted = req.secure
       protocol = (encrypted and 'https') or 'http'
-    
+
     parsedUrl  = url.parse originalUrl, true
     hitUrl     = protocol + '://' + req.headers.host + parsedUrl.pathname
 
