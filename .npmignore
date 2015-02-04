@@ -4,7 +4,6 @@
 coffeelint.json
 
 Makefile
-src
 test
 coverage
 .travis.yml
